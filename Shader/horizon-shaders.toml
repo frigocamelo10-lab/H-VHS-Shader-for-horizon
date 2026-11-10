@@ -1,0 +1,289 @@
+
+schema = 1
+id = "vhs99"
+name = "VHS Camera for Horizon"
+version = "3.3.0"
+api = "0.1"
+description = "Analog VHS camera simulation with JPEG compression artifacts, film grain, scanlines, lens effects, bloom and subtle movement."
+
+[[post]]
+file = "post/vhs.wgsl"
+name = "VHS Camera"
+
+[[post]]
+file = "post/motion.wgsl"
+name = "Camera Motion"
+
+[[pages]]
+id = "main"
+name = "VHS Camera"
+items = ["vhs_enabled", "vhs_screen_type", "page:film", "page:analog", "page:compression", "page:bloom", "page:motion"]
+
+[[pages]]
+id = "film"
+name = "Film & Lens"
+items = ["vhs_grain", "vhs_dark_grain", "vhs_grain_speed", "vhs_chromatic", "vhs_achromatic", "vhs_vignette"]
+
+[[pages]]
+id = "analog"
+name = "Analog Effects"
+items = ["vhs_scanlines", "vhs_scanline_fine", "vhs_flicker", "vhs_tape_noise", "vhs_dropout", "vhs_overlay_strength"]
+
+[[pages]]
+id = "compression"
+name = "JPEG Simulation"
+items = ["vhs_jpeg_compression", "vhs_jpeg_blocks", "vhs_color_artifacts", "vhs_desaturation"]
+
+[[pages]]
+id = "bloom"
+name = "Light & Bloom"
+items = ["vhs_bloom_strength", "vhs_bloom_threshold", "vhs_bloom_radius", "vhs_bloom_depth", "vhs_highlight_boost", "vhs_bottom_noise_strength"]
+
+[[pages]]
+id = "motion"
+name = "Camera Motion"
+items = ["motion_enabled", "motion_idle_strength", "motion_walk_strength", "motion_run_strength"]
+
+[[options]]
+id = "vhs_enabled"
+name = "VHS Effect"
+type = "bool"
+default = true
+
+[[options]]
+id = "vhs_screen_type"
+name = "Screen Type"
+type = "choice"
+values = ["16:9", "4:3", "1:1"]
+default = "4:3"
+
+[[options]]
+id = "vhs_grain"
+name = "Film Grain"
+type = "float"
+default = 0.13
+min = 0.0
+max = 0.3
+step = 0.005
+
+[[options]]
+id = "vhs_dark_grain"
+name = "Dark Grain Boost"
+type = "float"
+default = 2.4
+min = 0.0
+max = 5.0
+step = 0.1
+
+[[options]]
+id = "vhs_grain_speed"
+name = "Grain Animation Speed"
+type = "float"
+default = 24.0
+min = 1.0
+max = 60.0
+step = 1.0
+
+[[options]]
+id = "vhs_chromatic"
+name = "Chromatic Aberration"
+type = "float"
+default = 0.48
+min = 0.0
+max = 4.0
+step = 0.05
+
+[[options]]
+id = "vhs_achromatic"
+name = "Achromatic Aberration"
+type = "float"
+default = 0.72
+min = 0.0
+max = 2.0
+step = 0.05
+
+[[options]]
+id = "vhs_vignette"
+name = "Lens Vignette"
+type = "float"
+default = 0.18
+min = 0.0
+max = 0.8
+step = 0.01
+
+[[options]]
+id = "vhs_scanlines"
+name = "Scanlines"
+type = "float"
+default = 0.14
+min = 0.0
+max = 0.5
+step = 0.01
+
+[[options]]
+id = "vhs_scanline_fine"
+name = "Fine Scanlines"
+type = "float"
+default = 0.04
+min = 0.0
+max = 0.3
+step = 0.01
+
+[[options]]
+id = "vhs_flicker"
+name = "Analog Flicker"
+type = "float"
+default = 0.012
+min = 0.0
+max = 0.08
+step = 0.001
+
+[[options]]
+id = "vhs_tape_noise"
+name = "Tape Noise"
+type = "float"
+default = 0.045
+min = 0.0
+max = 0.2
+step = 0.005
+
+[[options]]
+id = "vhs_dropout"
+name = "Tape Dropouts"
+type = "float"
+default = 0.35
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "vhs_overlay_strength"
+name = "Overlay Strength"
+type = "float"
+default = 0.58
+min = 0.0
+max = 1.5
+step = 0.01
+
+[[options]]
+id = "vhs_jpeg_compression"
+name = "JPEG Compression"
+type = "float"
+default = 0.82
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "vhs_jpeg_blocks"
+name = "JPEG Block Artifacts"
+type = "float"
+default = 0.65
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "vhs_color_artifacts"
+name = "Color Artifacts"
+type = "float"
+default = 0.16
+min = 0.0
+max = 0.5
+step = 0.01
+
+[[options]]
+id = "vhs_desaturation"
+name = "Color Desaturation"
+type = "float"
+default = 0.08
+min = 0.0
+max = 0.5
+step = 0.01
+
+[[options]]
+id = "vhs_bloom_strength"
+name = "Bloom Strength"
+type = "float"
+default = 1.35
+min = 0.0
+max = 3.0
+step = 0.05
+
+[[options]]
+id = "vhs_bloom_threshold"
+name = "Bloom Threshold"
+type = "float"
+default = 0.68
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "vhs_bloom_radius"
+name = "Bloom Radius"
+type = "float"
+default = 12.0
+min = 1.0
+max = 32.0
+step = 1.0
+
+[[options]]
+id = "vhs_bloom_depth"
+name = "Depth Influence"
+type = "float"
+default = 0.45
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "vhs_highlight_boost"
+name = "Highlight Overexposure"
+type = "float"
+default = 0.25
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "vhs_bottom_noise_strength"
+name = "Bottom Noise Strength"
+type = "float"
+default = 0.95
+min = 0.0
+max = 1.0
+step = 0.01
+
+[[options]]
+id = "motion_enabled"
+name = "Camera Bobbing"
+type = "bool"
+default = true
+
+[[options]]
+id = "motion_idle_strength"
+name = "Idle Bobbing"
+type = "float"
+default = 0.12
+min = 0.0
+max = 2.5
+step = 0.02
+
+[[options]]
+id = "motion_walk_strength"
+name = "Walking Bobbing"
+type = "float"
+default = 0.7
+min = 0.0
+max = 3.5
+step = 0.05
+
+[[options]]
+id = "motion_run_strength"
+name = "Running Bobbing"
+type = "float"
+default = 1.25
+min = 0.0
+max = 5.0
+step = 0.05
